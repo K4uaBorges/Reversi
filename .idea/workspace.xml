@@ -4,27 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="11a730ef-9f07-4b68-bec9-887d1bae7351" name="Changes" comment=".">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="11a730ef-9f07-4b68-bec9-887d1bae7351" name="Changes" comment="Reversi game in terminal">
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Game/Table/table.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Game/Table/table.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/game/Game.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/game/Game.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/game/GameSettings.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/game/GameSettings.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/game/piece/Piece.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/game/piece/Piece.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/game/piece/color/Color.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/game/piece/color/Color.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/game/piece/position/Direction.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/game/piece/position/Direction.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/game/piece/position/Position.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/game/piece/position/Position.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/game/table/Search.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/game/table/Search.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ui/Terminal.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ui/Terminal.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ui/terminal/AppConsoleReversi.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ui/terminal/AppConsoleReversi.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ui/terminal/Commands.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ui/terminal/Commands.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ui/terminal/Output.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ui/terminal/Output.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ui/terminal/input.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ui/terminal/input.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/game/GameTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/game/GameTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/game/gameSettingsTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/game/gameSettingsTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/game/table/SearchTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/game/table/SearchTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/game/table/tableTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/game/table/tableTest.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,6 +38,9 @@
         <option value="Kotlin File" />
       </list>
     </option>
+  </component>
+  <component name="Git.Merge.Settings">
+    <option name="BRANCH" value="origin/main" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -252,7 +237,7 @@
       <workItem from="1760987165015" duration="1496000" />
       <workItem from="1760993651788" duration="4935000" />
       <workItem from="1760999332358" duration="22225000" />
-      <workItem from="1761054862024" duration="34715000" />
+      <workItem from="1761054862024" duration="35908000" />
     </task>
     <task id="LOCAL-00001" summary="Finsih Search.kt and testing">
       <option name="closed" value="true" />
@@ -262,16 +247,36 @@
       <option name="project" value="LOCAL" />
       <updated>1760634920867</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Reversi game in terminal">
+      <option name="closed" value="true" />
+      <created>1761320863008</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1761320863009</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Finsih Search.kt and testing" />
     <MESSAGE value="." />
-    <option name="LAST_COMMIT_MESSAGE" value="." />
+    <MESSAGE value="Reversi game in terminal" />
+    <option name="LAST_COMMIT_MESSAGE" value="Reversi game in terminal" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
