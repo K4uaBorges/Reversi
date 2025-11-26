@@ -69,23 +69,14 @@ fun Game.new(): Game{
 
     // Function to playing
 fun Game.play(pos: Position): Game {
-
     if (turnWhite && playerColor == Color(WHITE)
         || (!turnWhite && playerColor == Color(BLACK)) || name == null) {
-        if (turnWhite){
-            if (putPiece(pos)) {
-                turnWhite = false
-                currentPlayer = Piece(position = pos, color = Color(WHITE))
-            } else {
-                throw Error("INVALID POSITION $pos")
-            }
+        if (putPiece(pos)) {
+            turnWhite = !turnWhite
+            currentPlayer =
+                Piece(position = pos, color = if(turnWhite)Color(WHITE) else Color(BLACK))
         } else {
-            if (putPiece(pos)) {
-                turnWhite = true
-                currentPlayer = Piece(position = pos, color = Color(BLACK))
-            } else {
-                throw Error("INVALID POSITION $pos")
-            }
+            throw Error("INVALID POSITION $pos")
         }
     } else throw Error("YOU CAN'T PLAY, IT'S NOT YOUR TURN")
     return this
