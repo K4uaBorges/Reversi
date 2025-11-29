@@ -19,24 +19,27 @@
  * @see isValidPosition
 */
 
-package game.table
+package model.table
 
-import game.piece.color.*
-import game.piece.position.Position
-import game.piece.Piece
-import game.piece.position.Directions.*
-import java.util.HashMap
+import model.piece.Color
+import model.piece.Directions.*
+import model.piece.Piece
+import model.piece.Position
+
+const val BOARD_SIZE: Int = 8
 
 const val MIN_ROW: Int = 1
 const val MIN_COL: Char = 'A'
-const val MAX_ROW: Int = 8
-const val MAX_COL: Char = 'H'
-const val SIZE: Int = 64
+const val MAX_ROW: Int = BOARD_SIZE
+
+//Adding more 64, because the ascii code of the first letter start in 65 ("A")
+const val MAX_COL: Char = (BOARD_SIZE+64).toChar()
+const val TOTAL_BOARD_SIZE: Int = BOARD_SIZE*BOARD_SIZE
 
 open class Table {
 
     // Table 8x8
-    private val mapBoard = HashMap<Position, Piece>(SIZE)
+    private val mapBoard = HashMap<Position, Piece>(BOARD_SIZE)
 
     // Get the Table
     fun getMapBoard(): HashMap<Position, Piece> = mapBoard

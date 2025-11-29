@@ -30,11 +30,11 @@
  *
  **/
 
-package game.table
+package model.table
 
-import game.piece.position.*
-import game.piece.*
-import game.piece.position.Directions.*
+import model.piece.Directions.*
+import model.piece.Piece
+import model.piece.*
 import java.util.HashMap
 
 class Search(val table: Table) {
@@ -50,43 +50,46 @@ class Search(val table: Table) {
             Pair(UP_RIGHT, DOWN_LEFT)
         else
             Pair(UP_LEFT, DOWN_RIGHT)
-run {
-    val acc = mutableListOf<Position>()
-    var pos1 = start.plus(dir1)
-    var pos2 = start.plus(dir2)
-    var closed = false
 
-    while (table.inBound(pos1) && table.getPiece(pos1) != null) {
-        if(table.getPiece(start.plus(dir1))!!.color == targetColor) { break }
-        val pieceCur = table.getPiece(pos1)!!
-        acc.add(pos1)
-        if (pieceCur.color == targetColor) { closed = true; break }
-        pos1 = pos1.plus(dir1)
-    }
+        run {
+            val acc = mutableListOf<Position>()
+            var pos1 = start.plus(dir1)
+            var pos2 = start.plus(dir2)
+            var closed = false
 
-    if (closed) {
-        acc.forEach { result[it] = dir1 }
-    }
+            while (table.inBound(pos1) && table.getPiece(pos1) != null) {
+                if(table.getPiece(start.plus(dir1))!!.color == targetColor) { break }
+                val pieceCur = table.getPiece(pos1)!!
+                acc.add(pos1)
+                if (pieceCur.color == targetColor) { closed = true; break }
+                pos1 = pos1.plus(dir1)
+            }
 
-    closed = false
+            if (closed) {
+                acc.forEach { result[it] = dir1 }
+            }
 
-    while (table.inBound(pos2) && table.getPiece(pos2) != null) {
-        if(table.getPiece(start.plus(dir2))!!.color == targetColor) { break }
-        val pieceCur = table.getPiece(pos2)!!
-        acc.add(pos2)
-        if (pieceCur.color == targetColor) { closed = true; break }
-        pos2 = pos2.plus(dir2)
-    }
+            closed = false
 
-    if (closed) {
-        acc.forEach { result[it] = dir2 }
-    }
-}
+            while (table.inBound(pos2) && table.getPiece(pos2) != null) {
+                if(table.getPiece(start.plus(dir2))!!.color == targetColor) { break }
+                val pieceCur = table.getPiece(pos2)!!
+                acc.add(pos2)
+                if (pieceCur.color == targetColor) { closed = true; break }
+                pos2 = pos2.plus(dir2)
+            }
+
+            if (closed) {
+                acc.forEach { result[it] = dir2 }
+            }
+        }
 
         return result
     }
 
-        // Search in row if it doesn't have a piece in right, go search in a left, and the same in reverse
+
+
+    // Search in row if it doesn't have a piece in right, go search in a left, and the same in reverse
     fun searchInRow(p: Piece): HashMap<Position, Directions> {
         val targetColor = p.color
         val start = p.position

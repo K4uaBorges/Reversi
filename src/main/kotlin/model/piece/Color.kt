@@ -13,7 +13,7 @@
  */
 
 
-package game.piece.color
+package model.piece
 
 enum class ColorEnum {
     WHITE,

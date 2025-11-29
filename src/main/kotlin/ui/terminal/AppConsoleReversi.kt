@@ -19,10 +19,9 @@
 
 package ui.terminal
 
-import game.Game
+import model.Game
 import java.io.FileNotFoundException
 import java.io.IOException
-import java.lang.NumberFormatException
 
 
 class AppConsoleReversi {
@@ -110,7 +109,7 @@ class AppConsoleReversi {
                         println("Game file corrupted: ${e.message}")
                         println("The game file is corrupted. Try creating a new game.")
                     }
-                    e.message?.contains("Ficheiro inválido") == true -> {
+                    e.message?.contains("The game file is corrupted. Try creating a new game.") == true -> {
                         println("Invalid file: ${e.message}")
                         println("The game file is corrupted. Try creating a new game.")
                     }

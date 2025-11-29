@@ -9,9 +9,5 @@
  * As the piece is fixed, only a single position has been defined, possible changes in color
  */
 
-package game.piece
-
-import game.piece.color.*
-import game.piece.position.*
-
+package model.piece
 data class Piece(val position: Position, val color: Color)

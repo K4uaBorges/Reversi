@@ -1,10 +1,11 @@
-package game
+package model
 
-import game.piece.color.Color
-import game.piece.color.ColorEnum
-import game.piece.position.Position
-import game.piece.Piece
-import game.table.Table
+import model.piece.Color
+import model.piece.ColorEnum.BLACK
+import model.piece.ColorEnum.WHITE
+import model.piece.Piece
+import model.piece.Position
+import model.table.Table
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
@@ -16,18 +17,18 @@ class GameTest {
 
     @BeforeEach
     fun setUp() {
-        // Inicializa o jogo básico
+        // Start test
         game = Game(
             "testGame",
             true,
-            null,
+            Piece(Position(4,'D'),Color(WHITE)),
             Table(),
-            Color(ColorEnum.BLACK)
+            Color(BLACK)
         )
         game.new()
     }
 
-    // ---------- Teste do new() ----------
+    // ---------- Test new() ----------
     @Test
     fun New_Should_Initialize_Correct_Starting_Pieces() {
         val black1 = game.board.getPiece(Position(4, 'D'))
@@ -40,13 +41,13 @@ class GameTest {
         assertNotNull(white1)
         assertNotNull(white2)
 
-        assertEquals(ColorEnum.BLACK, black1!!.color.color)
-        assertEquals(ColorEnum.BLACK, black2!!.color.color)
-        assertEquals(ColorEnum.WHITE, white1!!.color.color)
-        assertEquals(ColorEnum.WHITE, white2!!.color.color)
+        assertEquals(BLACK, black1!!.color.color)
+        assertEquals(BLACK, black2!!.color.color)
+        assertEquals(WHITE, white1!!.color.color)
+        assertEquals(WHITE, white2!!.color.color)
     }
 
-    // ---------- Teste do putPiece() ----------
+    // ---------- Test putPiece() ----------
     @Test
     fun PutPiece_Should_Add_A_New_Piece_When_Position_Is_Valid1() {
         val pos = Position(3, 'D')
@@ -75,13 +76,13 @@ class GameTest {
         assertFalse(result, "Deveria retornar falso pois a posição é inválida")
     }
 
-    // ---------- Teste do finish() ----------
+    // ---------- Test finish() ----------
     @Test
     fun Finish_Should_Not_Throw_Exception() {
         assertDoesNotThrow { game.finish() }
     }
 
-    // ---------- Teste de save() e load() ----------
+    // ---------- Test save() and load() ----------
     @Test
     fun Save_And_Load_Should_Not_Throw_Exception() {
         assertDoesNotThrow {
@@ -90,7 +91,7 @@ class GameTest {
         }
     }
 
-    // ------ Testes de validMoves() ------
+    // ------ Test validMoves() ------
     @Test
     fun validMoves_Should_Not_Be_Empty_At_Game_Start() {
         val moves = game.validMoves()
@@ -129,38 +130,38 @@ class GameTest {
         val emptyGame = Game(
             name = "Empty",
             turnWhite = true,
-            currentPlayer = Piece(Position(1, 'A'), Color(ColorEnum.WHITE)),
+            currentPlayer = Piece(Position(1, 'A'), Color(WHITE)),
             board = Table(), // Tabuleiro vazio
-            playerColor = Color(ColorEnum.BLACK)
+            playerColor = Color(BLACK)
         )
         val moves = emptyGame.validMoves()
         assertTrue(moves.isEmpty(), "Valid moves should be empty on empty board")
     }
 
-    //----------- Testes da função pass() --------------
+    //----------- Test pass() --------------
 
     @Test
     fun pass_Should_Throw_Error_When_Valid_Moves_Exist() {
-        // No estado inicial há jogadas válidas -> deve lançar erro
+        // Inical state there have valid moves -> might return throw
         val ex = assertThrows<Error> { game.pass() }
         assertTrue(ex.message!!.contains("You can't Pass"))
     }
 
     @Test
     fun pass_Should_Switch_Turn_When_No_Valid_Moves() {
-        // Criar um estado sem jogadas válidas para a cor do turno
-        val emptyGame = Game(
+        // Create new state plays valid to color turn
+        var emptyGame = Game(
             name = "EmptyNoMoves",
             turnWhite = true,
-            currentPlayer = null,
+            currentPlayer = Piece(Position(3,'A'),Color(BLACK)),
             board = Table(),
-            playerColor = Color(ColorEnum.BLACK)
+            playerColor = Color(BLACK)
         )
-        // Tabuleiro vazio -> sem jogadas válidas
+        // Empty Table -> No valid plays
         assertTrue(emptyGame.validMoves().isEmpty())
 
-        // Não deve lançar e deve alternar o turno
-        assertDoesNotThrow { emptyGame.pass() }
+        // Can't play, must pass turn
+        assertDoesNotThrow {emptyGame = emptyGame.pass() }
         assertFalse(emptyGame.turnWhite, "Após o pass, o turno devia alternar.")
     }
 }

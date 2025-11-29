@@ -1,10 +1,10 @@
-package game.table
+package model.table
 
-import game.piece.color.Color
-import game.piece.color.ColorEnum
-import game.piece.position.Position
-import game.piece.Piece
-import org.junit.jupiter.api.Assertions.*
+import model.piece.Color
+import model.piece.ColorEnum
+import model.piece.Piece
+import model.piece.Position
+import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
 class SearchTest {

@@ -18,10 +18,11 @@
 
 package ui.terminal
 
-import game.Game
-import game.piece.color.ColorEnum.*
-import game.piece.position.*
-import game.validMoves
+import model.Game
+import model.piece.ColorEnum.BLACK
+import model.piece.ColorEnum.WHITE
+import model.piece.Position
+import model.validMoves
 
 const val BOARD_SIZE_LINE = 8
 const val BOARD_SIZE_COL = 'H'

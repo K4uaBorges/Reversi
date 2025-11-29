@@ -23,13 +23,15 @@
 
 package ui.terminal
 
-import game.piece.color.Color
-import game.piece.color.ColorEnum
-import game.piece.position.Position
-import game.table.Table
-import game.Game
-import game.*
-import game.piece.color.ColorEnum.BLACK
+import model.*
+import model.piece.Color
+import model.piece.ColorEnum
+import model.piece.ColorEnum.BLACK
+import model.piece.ColorEnum.WHITE
+import model.piece.Piece
+import model.piece.Position
+import model.table.TOTAL_BOARD_SIZE
+import model.table.Table
 import kotlin.system.exitProcess
 
 abstract class Command(val commandHelpMsg: String) {
@@ -59,14 +61,14 @@ object Play: Command(commandHelpMsg = "PLAY <PositionCell(NUMBER,CHARACTER)> - p
         // --- if the game is offline (turns) ---
         if (game.name == null) {
             game.play(pos)
-            if (game.board.getMapBoard().size == MAX_BOARD_CELL) game.finish()
+            if (game.board.getMapBoard().size == TOTAL_BOARD_SIZE) game.finish()
             return game
         }
 
         // --- if the game is a multiplayer game (local game) ---
         game.play(pos)
 
-            if (game.board.getMapBoard().size == MAX_BOARD_CELL) game.finish()
+            if (game.board.getMapBoard().size == TOTAL_BOARD_SIZE) game.finish()
         return game
     }
 }
@@ -92,7 +94,7 @@ object New : Command(commandHelpMsg = "NEW (#|@) [<name>] - creates a new game. 
             else -> println("Invalid player symbol. Use # for Black or @ for White")
         }
 
-        val game = Game(name, true, null, Table(), playerColor!!)
+        val game = Game(name, true, Piece(Position(3,'A'),Color(BLACK)), Table(), playerColor!!)
 
         game.new()
         println("You are a player ${if (playerColor.color == BLACK) "#" else "@" }" +
@@ -107,9 +109,9 @@ object Join : Command(commandHelpMsg = "JOIN <Player> - joins in game with anoth
         if (args.isEmpty() || args.size != 1) throw Error("MISSING ARGUMENT -> Use: JOIN <name>")
         val input = args.joinToString(" ").trim()
 
-        val local = Game(input, true, null, Table(), null)  // a tua cor neste terminal
+        val local = Game(input, true, Piece(Position(3,'A'),Color(BLACK)), Table(), playerColor = Color(WHITE))  // a tua cor neste terminal
         val newLocalGame = local.load()
-        println("Ligado ao jogo $input como ${if (newLocalGame.playerColor!! == Color(BLACK)) '#' else '@'}.")
+        println("Ligado ao jogo $input como ${if (newLocalGame.playerColor == Color(BLACK)) '#' else '@'}.")
         return newLocalGame
     }
 }

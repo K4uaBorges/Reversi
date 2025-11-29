@@ -24,21 +24,22 @@
  */
 
 
-package game
-
-import game.piece.color.Color
-import game.piece.color.ColorEnum.*
-import game.piece.position.Position
-import game.piece.Piece
-import game.table.Table
-import org.junit.jupiter.api.Assertions.*
+package model
+import model.piece.Color
+import model.piece.ColorEnum.BLACK
+import model.piece.Piece
+import model.piece.Position
+import model.table.Table
+import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.Assertions.assertNotNull
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertThrows
+import storage.gameStorage
 
 class GameSettingsTest {
 
     var gameTest = Game("testing",true,
-        null, Table(), Color(BLACK))
+        Piece(Position(3,'A'),Color(BLACK)), Table(), Color(BLACK))
 
     @Test
     fun test_SaveBoard_Writes_Correct_Format() {
@@ -62,7 +63,7 @@ class GameSettingsTest {
             name = "null", true, Piece(Position(3, 'A'),
             Color(BLACK)), Table(),Color(BLACK))
 
-        val nonExisting = GameSettings(null)
+        val nonExisting = gameStorage(null)
 
         assertThrows<Error> {
             nonExisting.load(game = gameTest)

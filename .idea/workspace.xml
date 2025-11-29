@@ -5,8 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="11a730ef-9f07-4b68-bec9-887d1bae7351" name="Changes" comment="Reversi game in terminal">
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/model/Game.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/model/piece/Position.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/model/piece/position/Directions.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/game/Game.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/game/GameSettings.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/game/piece/Piece.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/model/piece/Piece.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/game/piece/color/Color.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/model/piece/Color.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/game/piece/position/Direction.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/game/piece/position/Position.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/game/table/Search.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/model/table/Search.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/game/table/table.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/model/table/table.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ui/Terminal.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ui/Terminal.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ui/terminal/AppConsoleReversi.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ui/terminal/AppConsoleReversi.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ui/terminal/Commands.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ui/terminal/Commands.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ui/terminal/Output.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ui/terminal/Output.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/game/GameTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/model/GameTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/game/gameSettingsTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/model/gameSettingsTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/game/table/SearchTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/model/table/SearchTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/game/table/tableTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/model/table/tableTest.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,6 +66,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="KotlinCodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -62,11 +86,16 @@
     "Gradle.Build Reversi.executor": "Run",
     "Gradle.Download Sources.executor": "Run",
     "Gradle.GameTest (1).executor": "Run",
+    "Gradle.GameTest.PutPiece_Should_Add_A_New_Piece_When_Position_Is_Valid1.executor": "Run",
+    "Gradle.GameTest.PutPiece_Should_Return_False_When_Position_Is_Invalid_not_changeColor.executor": "Run",
+    "Gradle.GameTest.PutPiece_Should_Return_False_When_Position_Is_Invalid_out_of_range.executor": "Debug",
     "Gradle.GameTest.executor": "Run",
+    "Gradle.GameTest.pass_Should_Switch_Turn_When_No_Valid_Moves.executor": "Run",
     "Gradle.Reversi [dependencies].executor": "Run",
     "Gradle.Reversi [test].executor": "Run",
-    "Gradle.SearchTest.executor": "Run",
+    "Gradle.SearchTest.executor": "Debug",
     "Gradle.SearchTest.test_Diagonal.executor": "Run",
+    "Gradle.SearchTest.test_if_search_in_same_diag_a_2_pieces_in_table_false.executor": "Run",
     "Gradle.gameSettingsTest.executor": "Run",
     "Gradle.tableTest.executor": "Run",
     "Gradle.tableTest.testing_if_inBound.executor": "Debug",
@@ -94,7 +123,7 @@
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
     "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "advanced.settings",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -110,15 +139,15 @@
       <recent name="Game.Table" />
     </key>
     <key name="K2MoveDeclarationsDialog.RECENT_PACKAGE_KEY">
+      <recent name="model.piece" />
+      <recent name="model.piece.color" />
       <recent name="UI" />
       <recent name="UI." />
       <recent name="UI.termina" />
-      <recent name="UI.terminal" />
-      <recent name="UI.Terminal" />
     </key>
   </component>
-  <component name="RunManager" selected="Kotlin.TerminalKt (1)">
-    <configuration name="GameTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Kotlin.TerminalKt">
+    <configuration name="GameTest.PutPiece_Should_Add_A_New_Piece_When_Position_Is_Valid1" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -131,7 +160,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;Game.GameTest&quot;" />
+            <option value="&quot;model.GameTest.PutPiece_Should_Add_A_New_Piece_When_Position_Is_Valid1&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -142,26 +171,52 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="Reversi [dependencies]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="GameTest.PutPiece_Should_Return_False_When_Position_Is_Invalid_not_changeColor" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
+        <option name="scriptParameters" value="" />
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
           <list>
-            <option value="dependencies" />
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;model.GameTest.PutPiece_Should_Return_False_When_Position_Is_Invalid_not_changeColor&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>false</RunAsTest>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="GameTest.pass_Should_Switch_Turn_When_No_Valid_Moves" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;model.GameTest.pass_Should_Switch_Turn_When_No_Valid_Moves&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
     <configuration name="Reversi [test]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
@@ -186,15 +241,8 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="TerminalKt (1)" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ui.TerminalKt" />
-      <module name="Reversi.main" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="TerminalKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ui.terminal.TerminalKt" />
+      <option name="MAIN_CLASS_NAME" value="ui.TerminalKt" />
       <module name="Reversi.main" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -202,11 +250,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Kotlin.TerminalKt (1)" />
-        <item itemvalue="Gradle.Reversi [test]" />
         <item itemvalue="Kotlin.TerminalKt" />
-        <item itemvalue="Gradle.Reversi [dependencies]" />
-        <item itemvalue="Gradle.GameTest" />
+        <item itemvalue="Gradle.Reversi [test]" />
+        <item itemvalue="Gradle.GameTest.pass_Should_Switch_Turn_When_No_Valid_Moves" />
+        <item itemvalue="Gradle.GameTest.PutPiece_Should_Add_A_New_Piece_When_Position_Is_Valid1" />
+        <item itemvalue="Gradle.GameTest.PutPiece_Should_Return_False_When_Position_Is_Invalid_not_changeColor" />
       </list>
     </recent_temporary>
   </component>
@@ -238,6 +286,8 @@
       <workItem from="1760993651788" duration="4935000" />
       <workItem from="1760999332358" duration="22225000" />
       <workItem from="1761054862024" duration="35908000" />
+      <workItem from="1764333469981" duration="4128000" />
+      <workItem from="1764345452698" duration="7359000" />
     </task>
     <task id="LOCAL-00001" summary="Finsih Search.kt and testing">
       <option name="closed" value="true" />
@@ -279,6 +329,86 @@
     <option name="LAST_COMMIT_MESSAGE" value="Reversi game in terminal" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="kotlin-function">
+          <url>file://$PROJECT_DIR$/src/main/kotlin/model/Game.kt</url>
+          <line>64</line>
+          <properties method="play">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-function">
+          <url>file://$PROJECT_DIR$/src/main/kotlin/model/Game.kt</url>
+          <line>200</line>
+          <properties method="validMoves">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-function">
+          <url>file://$PROJECT_DIR$/src/test/kotlin/model/GameTest.kt</url>
+          <line>65</line>
+          <properties class="model.GameTest" method="PutPiece_Should_Return_False_When_Position_Is_Invalid_out_of_range">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-function">
+          <url>file://$PROJECT_DIR$/src/test/kotlin/model/GameTest.kt</url>
+          <line>72</line>
+          <properties class="model.GameTest" method="PutPiece_Should_Return_False_When_Position_Is_Invalid_not_changeColor">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/test/kotlin/model/GameTest.kt</url>
+          <line>52</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/kotlin/model/table/Search.kt</url>
+          <line>77</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/kotlin/model/table/Search.kt</url>
+          <line>59</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/kotlin/model/table/Search.kt</url>
+          <line>104</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/kotlin/model/table/Search.kt</url>
+          <line>121</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/kotlin/model/table/Search.kt</url>
+          <line>122</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/kotlin/model/Game.kt</url>
+          <line>102</line>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/test/kotlin/model/GameTest.kt</url>
+          <line>160</line>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="Game.Table.Table" memberName="mapBoard" />
