@@ -47,7 +47,7 @@ Was using Kotlin Compose to model the game
 # Database and funcionality game
 This project uses MongoDB as the database for an online game and multithreading to handle game rendering and real-time updates efficiently.
 The goal is to ensure good performance, data persistence, scalability, and smooth gameplay.
-
+Is actually using a environment variables to running a database, is just for security and keep the database safely
 
 # Contributing
 
