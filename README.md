@@ -10,14 +10,6 @@ A simple implementation of the classic board model *Reversi* (also known as *Oth
 - **Victory Condition**: The model ends when there are no more valid moves for either player. The player with the most pieces on the board at the end wins.
 - **Game Flow Management**: Includes features to start a new model, check for victory, save/load model progress.
 
-## Classes
-
-- **Game**: Manages the model logic, such as player turns, move validation, and checking for victory conditions.
-- **Piece**: Represents a single piece on the board, with color attributes (black or white).
-- **Table**: The 8x8 board where the model takes place. It stores the state of the model and provides functionality to place pieces and check for valid moves.
-- **Color**: Enum class that represents the two colors of pieces (Black and White).
-- **Direction**: Enum class representing the eight possible directions for flipping opponent's pieces (horizontal, vertical, and diagonal).
-
 ## Installation
 
 1. Clone the repository:
@@ -37,6 +29,8 @@ A simple implementation of the classic board model *Reversi* (also known as *Oth
 
 4. Run the project using Kotlin.
 
+![img.png](img.png)
+
 Usage
 
 - Upon starting the model, the board will be displayed, and players will take turns to place their pieces.
@@ -48,21 +42,7 @@ Usage
 # Example of Game Flow
 Here’s an example of how the model might look when executed:
 
-```bash
-You are a player @.
-   A B C D E F G H
-1  . . . . . . . .
-2  . . . . . . . .
-3  . . . . . . . .
-4  . . . # @ . . .
-5  . . . @ # . . .
-6  . . . . . . . .
-7  . . . . . . . .
-8  . . . . . . . .
-# = 2 | @ = 2
-Turn: @
-$ PLAY 4C
-```
+Was using Kotlin Compose to model the game
 
 # Contributing
 
